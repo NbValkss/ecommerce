@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 4000;
 const authRouter = require("./routes/authRoute");
 const cookieParser = require("cookie-parser");
 const productRouter = require("./routes/productRoute");
+const prodcategoryRouter = require("./routes/prodcategoryRoute");
+const blogRouter = require("./routes/blogRoutes");
+const blogCatRouter = require("./routes/blogCatRoute");
+const brandRouter = require("./routes/brandRoute");
 const morgan = require("morgan");
 
 
@@ -19,6 +23,11 @@ app.use(bodyParser.urlencoded({ extended: false}));
 
 app.use("/api/user", authRouter);
 app.use("/api/product", productRouter);
+app.use("/api/blog", blogRouter);
+app.use("/api/prodcategory", prodcategoryRouter);
+app.use("/api/blogcategory", blogCatRouter);
+app.use("/api/brand", brandRouter);
+
 app.use(cookieParser());
 app.use(notFound);
 app.use(errorHandler);

@@ -2,7 +2,7 @@ const express = require("express");
 const {createProduct,getaProduct,getAllProduct,
     updateProduct,deleteProduct} = require("../controller/productCtrl");
 const router = express.Router();
-const {isAdmin, authMiddleWare } = require("../middlewares/authMiddleWare")
+const {authMiddleWare,isAdmin} = require("../middlewares/authMiddleWare")
 
 
 router.post("/",  authMiddleWare,isAdmin, createProduct);
